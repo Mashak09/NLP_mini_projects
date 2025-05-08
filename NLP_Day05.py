@@ -1,20 +1,11 @@
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+#skcitlearn-ml library,feature_extracation: converts text to numbers and tfid vectorizer tf-idf to convert text into numbers
+documents=['DON is back','Is DON really Back', 'Yes DON is really back']
+tfid_vectorizer=TfidfVectorizer()
+#intitializing TfidfVectorizer
+tfidf_matrix= tfid_vectorizer.fit_transform(documents)
 
-# Sample documents
-documents = [
-    "NLP is great",
-    "NLP is fun",
-    "NLP is amazing"
-]
+print('Vocabulary: ',tfid_vectorizer.vocabulary_)
 
-# Initialize CountVectorizer
-vectorizer = CountVectorizer()
+print('tfidf_matrix.\n',tfidf_matrix.toarray())
 
-# Transform documents into BoW matrix
-bow_matrix = vectorizer.fit_transform(documents)
-
-# Display the vocabulary
-print("Vocabulary:", vectorizer.vocabulary_)
-
-# Convert to array for better readability
-print("BoW Matrix:\n", bow_matrix.toarray())
