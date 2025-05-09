@@ -16,3 +16,7 @@ print("king - man + woman ≈", result)
 glove_model=api.load('glove-twitter-50')
 #this loads and downloads model trained on twitter-50 words
 print("word similar to 'happy':",glove_model.most_similar('happy',topn=5))
+
+fasttext_model=api.load("fasttext-wiki-news-subwords-300")
+print("words most similar to 'computer':",fasttext_model.most_similar('computer',topn=5))
+print("Words most similar to 'compuetr' (misspelled 'computer'):", fasttext_model.most_similar('compuetr', topn=5))
