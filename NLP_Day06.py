@@ -12,3 +12,7 @@ print("Words similar to 'king':", similar_words)
 result = model.most_similar(positive=['king', 'woman'], negative=['man'], topn=1)
 #adds king and woman and subtracts man to give word similar
 print("king - man + woman ≈", result)
+
+glove_model=api.load('glove-twitter-50')
+#this loads and downloads model trained on twitter-50 words
+print("word similar to 'happy':",glove_model.most_similar('happy',topn=5))
